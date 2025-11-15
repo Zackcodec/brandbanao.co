@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Himanshu Thakur | BrandBanao.co</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #fff; color: #222; font-family: 'Poppins', sans-serif; }
+    .portfolio-header {
+      text-align: center;
+      padding: 4rem 5% 2rem;
+    }
+    .portfolio-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: -1px;
+    }
+    .portfolio-header span {
+      color: #7B61FF;
+    }
+    .portfolio-header img.avatar {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 1.5rem;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .intro h2 { font-weight: 600; margin-bottom: .5rem; }
+    .intro p { color: #555; font-size: 1rem; }
+
+    .experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .exp-box {
+      background: #fafaff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .exp-box h3 {
+      color: #7B61FF;
+      font-size: 1.1rem;
+      margin-bottom: .5rem;
+    }
+    .exp-box p { font-size: 0.9rem; color: #555; }
+
+    .contact-section {
+      text-align: center;
+      padding: 3rem 5%;
+      background: #fff;
+    }
+    .contact-links a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: #7B61FF;
+      font-weight: 500;
+    }
+
+    .software {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .software img {
+      width: 40px;
+      margin: 0 10px;
+    }
+
+    .projects {
+      text-align: center;
+      padding: 4rem 5%;
+      background: #fafaff;
+    }
+    .projects h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 1rem;
+    }
+    .project-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .project-item h4 { color: #222; }
+    .project-item p { color: #555; font-size: 0.9rem; }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      color: #777;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+    .about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+  line-height: 1.8;
+  color: #444;
+}
+
+.about-section h2 {
+  color: #7f57ff;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+.software-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f8fc;
+}
+
+.software-section h2 {
+  font-size: 2rem;
+  color: #7f57ff;
+  margin-bottom: 40px;
+}
+
+.software-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.software-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 130px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.software-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.software-item span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.software-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(127, 87, 255, 0.2);
+}
+
+/* “+” Add More Icon Style */
+.add-more {
+  justify-content: center;
+  background: #7f57ff;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-more:hover {
+  background: #6a45e0;
+}
+/* Left-aligned Subheading for Portfolio */
+.portfolio-subheading {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #7f57ff;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  margin-left: 2%;
+  position: relative;
+  padding-bottom: 8px;
+}
+/* Reels Section */
+.reel-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+/* Reels Description */
+.reel-desc {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  margin-left: 2%;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Reel Gallery Layout */
+.reel-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 55px;
+  margin-left: 8%;
+}
+
+/* Individual Reel Style */
+.reel {
+  width: 280px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.reel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reel-gallery {
+    justify-content: center;
+  }
+
+  .reel {
+    width: 90%;
+    height: auto;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <section class="portfolio-header">
+    <h1>Hi, I’m <span>Himanshu Thakur</span></h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Himanshu Thakur" class="avatar" />
+    <p>Founder & Creative Director at BrandBanao.co | Gwalior, India</p>
+  </section>
+
+  <section class="intro">
+    <h2>About Us</h2>
+ <p>
+  BrandBanao.co is a creative digital agency from Gwalior helping brands and creators grow online with smart content, strategy, and design.  
+  From social media to websites and video editing — we build digital identities that stand out and perform.  
+  Trusted by 50+ creators and business owners across India.
+</p>
+
+  </section>
+
+  <section class="experience">
+    <div class="exp-box">
+      <h3>Founder - BrandBanao.co</h3>
+      <p>2023 - Present<br>Leading social media, content, and design projects for clients across India.</p>
+    </div>
+    <div class="exp-box">
+      <h3>Social Media Strategist</h3>
+      <p>Helping creators and businesses scale YouTube & Instagram presence with smart, data-backed strategies.</p>
+    </div>
+    <div class="exp-box">
+      <h3>Website Designer & Editor</h3>
+      <p>Building fast, minimal websites and producing marketing visuals that align with the client’s vision.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:www.brandbanao.co@gmail.com">Email</a>
+      <a href="https://www.instagram.com/brandbanao.co/">Instagram</a>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+      <a href="tel:+919630809428">Call</a>
+    </div>
+
+    <div class="software">
+      <p><strong>Softwares We Use</strong></p>
+  <div class="software-list">
+    <div class="software-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Adobe After Effects">
+      <span>After Effects</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assests/premiere-pro.png" alt="Adobe Premiere Pro">
+      <span>Premiere Pro</span>
+    </div>
+
+    <div class="software-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" alt="VS Code">
+      <span>VS Code</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assests/canva.png" alt="Canva">
+      <span>Canva</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assests/capcut1.png" alt="CapCut">
+      <span>CapCut PC</span>
+    </div>
+    <div class="software-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Adobe Photoshop">
+      <span>Photoshop</span>
+  </div>
+    <div class="software-item">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968472.png" alt="Illustrator">
+      <span>Illustrator</span>
+  </div>
+</section>
+
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Our Work</h2>
+    <p>Here’s a glimpse of content and brand work I’ve done for clients.</p>
+    <br/>
+    <br/>
+    <h3 class="portfolio-subheading">Website Creation</h3>
+    <div class="project-grid">
+      <div class="project-item">
+        <img src="assests/numerologist.png" alt="Project">
+        <h4>Numerology & Tarot Reading Website </h4>
+        <p>Instagram & YouTube brand refresh with new visual identity and ad creatives.</p>
+      </div>
+      <div class="project-item">
+        <img src="assests/portfolio2.png" alt="Project">
+        <h4> Video Editing Website</h4>
+        <p>Short-form video editing and social optimization campaign.</p>
+      </div>
+      <div class="project-item">
+        <img src="assests/brandbanaoweb.png" alt="Project">
+        <h4>BrandBanao Portfolio Website</h4>
+        <p>Designed and built this site to represent our creative agency aesthetics.</p>
+      </div>
+    </div>
+  </section>
+  <section class="reel-section">
+  <h3 class="portfolio-subheading">Our Latest Reels</h3>
+  <p class="reel-desc">
+    Check out some of our latest short-form content and Instagram Reels created for clients — 
+    from brand storytelling to trending edits that boost engagement.
+  </p>
+
+  <div class="reel-gallery">
+    <!-- Reel 1 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/kissaanai.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Reel 2 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/politics1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Reel 3 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/caredit.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+        <!-- Reel 4 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/movieedit1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+        <!-- Reel 5 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/rajshamaniedit.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+        <!-- Reel 6 -->
+    <div class="reel">
+      <video controls muted loop>
+        <source src="assests/urbanliving.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    © 2025 Himanshu Thakur | BrandBanao.co
+  </footer>
+
+</body>
+</html>
